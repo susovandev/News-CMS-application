@@ -1,0 +1,28 @@
+{
+    "name": "backend",
+    "version": "1.0.0",
+    "description": "",
+    "main": "main.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "start:dev": "npx nodemon main.js",
+        "start:prod": "set NODE_ENV=production npm run lint && npm run format:check && npm run format && node main.js",
+        "lint": "npx eslint . --fix",
+        "format:check": "npx prettier . --check",
+        "format": "npx prettier . --write"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "type": "module",
+    "devDependencies": {
+        "@eslint/js": "^9.36.0",
+        "eslint": "^9.36.0",
+        "globals": "^16.4.0",
+        "prettier": "^3.6.2"
+    },
+    "dependencies": {
+        "dotenv": "^17.2.3",
+        "express": "^5.1.0"
+    }
+}
