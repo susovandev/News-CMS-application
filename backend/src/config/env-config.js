@@ -6,6 +6,9 @@ const _config = {
         NODE_ENV: process.env.NODE_ENV.trim(),
         PORT: Number(process.env.PORT),
     },
+    DATABASE: {
+        URI: String(process.env.DATABASE_URI),
+    },
 };
 
 export const config = Object.freeze(_config);
