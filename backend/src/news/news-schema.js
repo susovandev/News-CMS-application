@@ -1,4 +1,5 @@
 import { Schema, model } from 'mongoose';
+import mongoosePaginate from 'mongoose-paginate-v2';
 
 const newsSchema = new Schema(
     {
@@ -35,4 +36,5 @@ const newsSchema = new Schema(
     }
 );
 
+newsSchema.plugin(mongoosePaginate);
 export const News = model('News', newsSchema);
