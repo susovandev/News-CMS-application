@@ -1,4 +1,5 @@
 import { Schema, model } from 'mongoose';
+import slugify from 'slugify';
 
 const categorySchema = new Schema(
     {
@@ -36,13 +37,7 @@ const categorySchema = new Schema(
 );
 
 categorySchema.pre('save', function (next) {
-    if (!this.isNew) return next();
-
-    this.slug = this.name
-        .toLowerCase()
-        .trim()
-        .replace(/ /g, '-')
-        .replace(/[^a-z0-9-]/g, '');
+    this.slug = slugify(this.name, { lower: true });
     next();
 });
 
